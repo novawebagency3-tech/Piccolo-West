@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://googleusercontent.com https://*.googleusercontent.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-src https://www.google.com https://maps.google.com; connect-src 'none'; base-uri 'self'; form-action 'none';">
+  <title>Piccolo West – Ristorante, Pizzeria Gourmet &amp; Brace | Tavernelle di Colli al Metauro (PU)</title>
+  <meta name="description" content="Piccolo West dal 1976 a Tavernelle di Colli al Metauro (PU): cucina marchigiana fatta in casa, pizze gourmet ad alta digeribilità, carne alla brace e opzioni senza glutine. Parcheggio gratuito, giardino estivo.">
+  <meta name="theme-color" content="#FAF7F2">
+  <link rel="canonical" href="https://www.example.com/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Piccolo West",
+    "description": "Ristorante, pizzeria gourmet e brace dal 1976 a Tavernelle di Colli al Metauro. Cucina marchigiana fatta in casa.",
+    "foundingDate": "1976",
+    "servesCuisine": ["Marchigiana", "Pizzeria", "Carne alla brace"],
+    "priceRange": "€€",
+    "telephone": "+390721896238",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Pesaro, 1",
+      "addressLocality": "Tavernelle, Colli al Metauro",
+      "addressRegion": "PU",
+      "postalCode": "61036",
+      "addressCountry": "IT"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 43.737576, "longitude": 12.89759 },
+    "hasMap": "https://www.google.com/maps?q=43.737576,12.89759",
+    "sameAs": ["https://instagram.com/piccolo_west"],
+    "acceptsReservations": true,
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.4", "bestRating": "5", "reviewCount": "400" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Thursday"], "opens": "19:00", "closes": "00:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "19:00", "closes": "00:30" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#FAF7F2; --card:#FFFFFF; --line:#E8E0D5;
+      --wine:#7A1C24; --wine-d:#5C1319; --sage:#3E5641;
+      --text:#22201E; --muted:#5A554E;
+      --radius:14px;
+      --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:70px}
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-text-size-adjust:100%}
+    img{max-width:100%;display:block}
+    a{color:var(--wine)}
+    h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.2}
+    :focus-visible{outline:3px solid var(--wine);outline-offset:3px;border-radius:6px}
+    .skip{position:absolute;left:-999px;top:0;background:var(--wine);color:#fff;padding:.6rem 1rem;z-index:200}
+    .skip:focus{left:0}
+    .wrap{width:min(1100px,92%);margin-inline:auto}
+    section{padding:4rem 0}
+    .eyebrow{color:var(--wine);letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;font-weight:700}
+    .section-title{font-size:clamp(1.7rem,5vw,2.5rem);margin:.4rem 0 .6rem}
+    .section-lead{color:var(--muted);max-width:62ch;margin-bottom:2rem}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:999px;border:1.5px solid var(--wine);color:var(--wine);background:transparent;font:600 1rem var(--sans);text-decoration:none;cursor:pointer;min-height:48px;transition:background .2s,color .2s,transform .15s;text-align:center}
+    .btn:hover{background:rgba(122,28,36,.08)}
+    .btn:active{transform:scale(.98)}
+    .btn-primary{background:var(--wine);color:#fff}
+    .btn-primary:hover{background:var(--wine-d)}
+    .btn[disabled]{opacity:.45;cursor:not-allowed}
+
+    header.site{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .brand{font-family:var(--serif);font-size:1.2rem;color:var(--text);text-decoration:none;font-weight:700}
+    .brand span{color:var(--wine)}
+    .nav ul{display:none;list-style:none;gap:1.4rem}
+    .nav ul a{color:var(--text);text-decoration:none;font-size:.95rem}
+    .nav ul a:hover{color:var(--wine)}
+    .nav-toggle{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;width:44px;height:44px;font-size:1.3rem;cursor:pointer}
+    .nav.open ul{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--card);padding:1rem 4%;border-bottom:1px solid var(--line)}
+    .nav.open ul a{display:block;padding:.6rem 0}
+    @media(min-width:860px){.nav ul{display:flex}.nav-toggle{display:none}}
+
+    .hero{min-height:86vh;display:flex;align-items:center;text-align:center;padding:4rem 0;
+      background:radial-gradient(ellipse at 50% 0%,rgba(122,28,36,.10),transparent 60%),linear-gradient(180deg,#fffdf9,#FAF7F2)}
+    .badge{display:inline-block;border:1px solid var(--wine);color:var(--wine);padding:.4rem 1rem;border-radius:999px;font-size:.75rem;letter-spacing:.14em;font-weight:700;margin-bottom:1.4rem;background:#fff}
+    .hero h1{font-size:clamp(2.1rem,7vw,4rem);margin-bottom:1rem}
+    .hero h1 em{color:var(--wine);font-style:normal}
+    .hero p.sub{max-width:60ch;margin:0 auto 1.2rem;color:var(--muted);font-size:1.1rem;font-style:italic}
+    .rating{color:var(--wine);font-weight:700;margin-bottom:2rem}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+
+    #menu{background:#fff;border-block:1px solid var(--line)}
+    .menu-tools{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
+    .tabs{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:thin}
+    .tab{flex:0 0 auto;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:.65rem 1.1rem;border-radius:999px;cursor:pointer;font:600 .92rem var(--sans);min-height:44px}
+    .tab[aria-selected="true"]{background:var(--wine);color:#fff;border-color:var(--wine)}
+    .filter{background:transparent;border:1.5px dashed var(--sage);color:var(--sage);padding:.6rem 1rem;border-radius:999px;cursor:pointer;font:700 .9rem var(--sans);min-height:44px}
+    .filter[aria-pressed="true"]{background:var(--sage);color:#fff;border-style:solid}
+    .tabnote{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
+    .items{display:grid;gap:.9rem}
+    @media(min-width:760px){.items{grid-template-columns:1fr 1fr}}
+    .item{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.1rem;display:flex;justify-content:space-between;gap:1rem}
+    .item h3{font-size:1.05rem;margin-bottom:.25rem}
+    .item p{color:var(--muted);font-size:.9rem}
+    .price{color:var(--wine);font-weight:700;white-space:nowrap;font-family:var(--serif);font-size:1.1rem}
+    .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:.1rem .55rem;border-radius:999px;margin-top:.4rem;margin-right:.3rem;background:var(--sage);color:#fff}
+    .group-h{grid-column:1/-1;color:var(--wine);margin-top:.6rem}
+    .empty{color:var(--muted);padding:1rem;grid-column:1/-1}
+    .allergen-note{margin-top:1.6rem;color:var(--muted);font-size:.85rem;border-left:3px solid var(--wine);padding-left:.8rem}
+
+    .gallery{display:grid;gap:1.2rem;grid-template-columns:1fr}
+    @media(min-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .shot{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 10px rgba(34,32,30,.05)}
+    .shot .ph{aspect-ratio:4/3;position:relative;background:linear-gradient(135deg,#f3e9dc,#e8d5cd)}
+    .shot img{width:100%;height:100%;object-fit:cover}
+    .shot .fb{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:.4rem;color:var(--wine);font-family:var(--serif);font-size:1.1rem;text-align:center;padding:1rem;background:radial-gradient(circle at 30% 20%,rgba(122,28,36,.14),transparent 60%),linear-gradient(135deg,#f6ede1,#ecdcd3)}
+    .shot .fb b{font-size:2.4rem}
+    .shot .fb small{color:var(--muted);font-family:var(--sans);font-size:.8rem}
+    .shot.nofoto .fb{display:flex}
+    .shot.nofoto img{display:none}
+    .shot figcaption{padding:1rem 1.1rem}
+    .shot h3{font-size:1.12rem;margin-bottom:.3rem}
+    .shot p{color:var(--muted);font-size:.93rem}
+    .services{display:grid;gap:.9rem;margin-top:2rem;grid-template-columns:1fr}
+    @media(min-width:600px){.services{grid-template-columns:1fr 1fr}}
+    @media(min-width:960px){.services{grid-template-columns:repeat(3,1fr)}}
+    .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem;display:flex;gap:.9rem;align-items:flex-start}
+    .svc .ic{font-size:1.6rem;line-height:1}
+    .svc strong{display:block;margin-bottom:.15rem}
+    .svc span{color:var(--muted);font-size:.88rem}
+    .svc.green{border-color:rgba(62,86,65,.45)}
+
+    #prenota{background:#fff;border-block:1px solid var(--line)}
+    .widget{max-width:760px;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:1.4rem}
+    .steps{display:flex;gap:.5rem;margin-bottom:1.4rem;list-style:none}
+    .steps li{flex:1;text-align:center;font-size:.8rem;font-weight:600;color:var(--muted);border-bottom:4px solid var(--line);padding-bottom:.5rem}
+    .steps li.on{color:var(--wine);border-color:var(--wine)}
+    .steps li.done{color:var(--sage);border-color:var(--sage)}
+    .pane{display:none}.pane.on{display:block}
+    .pane h3{margin-bottom:.9rem;font-size:1.25rem}
+    .svc-cards{display:grid;gap:.8rem;grid-template-columns:1fr 1fr}
+    .svc-card{border:2px solid var(--line);background:#fff;border-radius:var(--radius);padding:1.2rem .8rem;cursor:pointer;text-align:center;font:700 1rem var(--sans);color:var(--text);min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem}
+    .svc-card span{font-size:1.9rem}
+    .svc-card[aria-pressed="true"]{border-color:var(--wine);background:rgba(122,28,36,.07);color:var(--wine)}
+    .opt{margin-top:1rem}
+    label.f{display:block;font-weight:600;font-size:.92rem;margin-bottom:.9rem}
+    input[type=date],input[type=text],input[type=tel],select,textarea{width:100%;margin-top:.35rem;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:.75rem .85rem;font:1rem var(--sans);min-height:48px}
+    textarea{min-height:90px;resize:vertical}
+    .slots-title{font-weight:600;font-size:.92rem;margin:.4rem 0 .5rem}
+    .slots{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.8rem}
+    .slot{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:.55rem 1rem;min-height:44px;font:600 .95rem var(--sans);cursor:pointer;color:var(--text)}
+    .slot[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);color:#fff}
+    .chk{display:flex;gap:.6rem;align-items:flex-start;font-size:.88rem;color:var(--muted);margin-bottom:.9rem}
+    .chk input{width:22px;height:22px;margin-top:.15rem;accent-color:var(--wine);flex:0 0 auto}
+    .nav-btns{display:flex;justify-content:space-between;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap}
+    .msg{font-size:.9rem;min-height:1.3em;margin-top:.5rem;color:var(--wine);font-weight:600}
+    .msg.warn{color:#9a5b00}
+    .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.5rem}
+    .recap{display:none;background:#fff;border:2px solid var(--wine);border-radius:var(--radius);padding:1.2rem;margin-top:1.2rem}
+    .recap.show{display:block}
+    .recap h4{font-family:var(--serif);color:var(--wine);font-size:1.2rem;margin-bottom:.6rem}
+    .recap dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;margin-bottom:1rem}
+    .recap dt{font-weight:700}
+    .recap dd{color:var(--muted);overflow-wrap:anywhere}
+    .hint{color:var(--muted);font-size:.85rem;margin-top:.6rem}
+
+    .contact-grid{display:grid;gap:1.6rem}
+    @media(min-width:860px){.contact-grid{grid-template-columns:1fr 1.1fr}}
+    .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem}
+    .box + .box{margin-top:1.2rem}
+    .box h3{margin-bottom:.7rem;color:var(--wine)}
+    .box p{margin-bottom:.5rem}
+    .big-rating{font-family:var(--serif);font-size:2.4rem;color:var(--wine);line-height:1}
+    .stars{color:var(--wine);letter-spacing:.1em}
+    table{width:100%;border-collapse:collapse;margin-top:.4rem}
+    th,td{text-align:left;padding:.55rem .3rem;border-bottom:1px solid var(--line);font-size:.95rem}
+    th{font-weight:600;width:45%}
+    tr.closed td{color:var(--muted)}
+    .socials{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+    .map{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#f6ede1,#ecdcd3);display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem}
+    .map iframe{width:100%;height:100%;border:0}
+    .map .ph{display:grid;gap:.8rem;justify-items:center}
+    .map .ph small{color:var(--muted);max-width:34ch}
+
+    footer{background:#2a1d1c;color:#d9cfc4;padding:2.5rem 0 5rem;font-size:.88rem}
+    footer h3{color:#fff;font-size:1rem;margin-bottom:.5rem}
+    footer a{color:#f1c9c4}
+    footer details{margin:1rem 0;border:1px solid #4a3836;border-radius:10px;padding:.8rem 1rem;background:#33231f}
+    footer summary{cursor:pointer;color:#fff;font-weight:600}
+    footer details p,footer details ul{margin-top:.6rem}
+    footer details ul{padding-left:1.2rem}
+    .fcall{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--wine);color:#fff;text-align:center;padding:.8rem;font-weight:700;text-decoration:none}
+    @media(min-width:860px){.fcall{display:none}footer{padding-bottom:2.5rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Vai al contenuto</a>
+
+  <header class="site">
+    <div class="wrap">
+      <nav class="nav" id="nav" aria-label="Navigazione principale">
+        <a class="brand" href="#top">Piccolo <span>West</span></a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Apri il menu di navigazione">☰</button>
+        <ul id="navList">
+          <li><a href="#menu">Menù</a></li>
+          <li><a href="#locale">Il Locale</a></li>
+          <li><a href="#prenota">Prenota</a></li>
+          <li><a href="#contatti">Dove siamo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <span class="badge">DAL 1976 · TAVERNELLE DI COLLI AL METAURO (PU)</span>
+        <h1>Piccolo West – <em>Ristorante, Pizzeria Gourmet &amp; Brace</em></h1>
+        <p class="sub">Cucina marchigiana fatta in casa dal 1976, pizze gourmet ad alta digeribilità, opzioni senza glutine e tagli selezionati di carne alla brace.</p>
+        <p class="rating" aria-label="Valutazione 4,4 su 5 su Google, oltre 400 recensioni">★★★★★ 4.4/5 su Google (oltre 400 recensioni)</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#prenota">Prenota un Tavolo</a>
+          <a class="btn" href="#menu">Sfoglia il Menù</a>
+          <a class="btn" href="tel:+390721896238">Chiama Ora (0721 896238)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="wrap">
+        <p class="eyebrow">La nostra cucina</p>
+        <h2 class="section-title">Il Menù Digitale</h2>
+        <p class="section-lead">Pasta fatta in casa, carne di Marchigiana IGP e Chianina alla brace, pizze gourmet e dolci artigianali. Scegli una categoria oppure mostra solo le proposte senza glutine o vegane.</p>
+
+        <div class="menu-tools">
+          <div class="tabs" role="tablist" aria-label="Categorie del menù" id="tabs"></div>
+          <button class="filter" id="filterBtn" aria-pressed="false">🌿 Mostra solo Opzioni Senza Glutine / Vegane</button>
+        </div>
+        <p class="tabnote" id="tabNote"></p>
+        <div class="items" id="items" role="tabpanel" aria-live="polite"></div>
+
+        <p class="allergen-note">Le indicazioni “Senza Glutine” e “Vegano” sono orientative. Per allergie, intolleranze o celiachia segnalalo sempre al personale al momento dell'ordine. Prezzi e disponibilità possono variare.</p>
+      </div>
+    </section>
+
+    <!-- GALLERIA -->
+    <section id="locale">
+      <div class="wrap">
+        <p class="eyebrow">Dal 1976</p>
+        <h2 class="section-title">Il Locale &amp; la Nostra Storia</h2>
+        <p class="section-lead">Da quasi cinquant'anni a Tavernelle: un posto dove sentirsi a casa, tra sapori del territorio e ospitalità di famiglia.</p>
+
+        <div class="gallery">
+          <figure class="shot">
+            <div class="ph">
+              <img src="img/giardino-portico.jpg" alt="Portico bianco con giardino fiorito e fontana, tavoli apparecchiati all'aperto" loading="lazy" width="1200" height="900">
+              <div class="fb" role="img" aria-label="Segnaposto: giardino estivo"><b>⛲</b>Giardino Estivo<small>Foto in arrivo</small></div>
+            </div>
+            <figcaption><h3>Il Nostro Giardino Estivo con Fontana Fiorita</h3><p>Un'oasi fresca e curata sotto il portico per le tue cene estive, cerimonie e serate in compagnia.</p></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="ph">
+              <img src="img/spiedino-brace.jpg" alt="Spiedino di carne e verdure alla brace impiattato su ardesia con insalatina" loading="lazy" width="1200" height="900">
+              <div class="fb" role="img" aria-label="Segnaposto: cucina alla brace"><b>🥩</b>Cucina alla Brace<small>Foto in arrivo</small></div>
+            </div>
+            <figcaption><h3>Cucina Marchigiana &amp; Specialità della Casa</h3><p>Carni selezionate alla brace, pasta fresca fatta in casa e pizze gourmet con ingredienti del territorio.</p></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="ph">
+              <img src="img/tavolo-bordeaux.jpg" alt="Tavolo elegante con tovaglia bordeaux e sedie in ferro battuto davanti alla fontana" loading="lazy" width="1200" height="900">
+              <div class="fb" role="img" aria-label="Segnaposto: tavolo apparecchiato"><b>🍷</b>Atmosfera Familiare<small>Foto in arrivo</small></div>
+            </div>
+            <figcaption><h3>Accoglienza &amp; Atmosfera Familiare dal 1976</h3><p>Un ambiente caldo, tranquillo e curato in ogni dettaglio, dove sentirsi sempre a casa.</p></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="ph">
+              <img src="img/ospitalita.jpg" alt="Sale del Piccolo West per famiglie, gruppi e occasioni speciali" loading="lazy" width="1200" height="900">
+              <div class="fb" role="img" aria-label="Segnaposto: ospitalità"><b>🎉</b>Occasioni Speciali<small>Foto in arrivo</small></div>
+            </div>
+            <figcaption><h3>Ospitalità per Famiglie, Gruppi &amp; Occasioni Speciali</h3><p>Ampie sale interne ed esterne ideali per compleanni, cene di gruppo e momenti da ricordare.</p></figcaption>
+          </figure>
+        </div>
+
+        <div class="services">
+          <div class="svc"><span class="ic" aria-hidden="true">🅿️</span><div><strong>Ampio Parcheggio Gratuito</strong></div></div>
+          <div class="svc"><span class="ic" aria-hidden="true">🌿</span><div><strong>Tavoli all'Aperto &amp; Sale Accoglienti</strong></div></div>
+          <div class="svc"><span class="ic" aria-hidden="true">🥡</span><div><strong>Servizio Asporto Veloce</strong></div></div>
+          <div class="svc green"><span class="ic" aria-hidden="true">🌾</span><div><strong>Opzioni Senza Glutine &amp; Vegane</strong></div></div>
+          <div class="svc"><span class="ic" aria-hidden="true">♿</span><div><strong>Accessibilità Totale</strong><span>Sedia a rotelle</span></div></div>
+          <div class="svc"><span class="ic" aria-hidden="true">🐾</span><div><strong>Pet &amp; Family Friendly</strong><span>Cani ammessi, seggioloni, menù bimbi</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRENOTAZIONE -->
+    <section id="prenota">
+      <div class="wrap">
+        <p class="eyebrow">Prenota</p>
+        <h2 class="section-title">Prenota un Tavolo o Ordina d'Asporto</h2>
+        <p class="section-lead">Tre semplici passaggi per preparare la tua richiesta. La prenotazione è valida solo dopo conferma da parte del locale.</p>
+
+        <div class="widget" id="widget">
+          <ol class="steps" id="steps" aria-label="Avanzamento">
+            <li class="on">1 · Servizio</li><li>2 · Data e ora</li><li>3 · I tuoi dati</li>
+          </ol>
+
+          <!-- Step 1 -->
+          <div class="pane on" id="pane1">
+            <h3>Scegli il servizio</h3>
+            <div class="svc-cards">
+              <button type="button" class="svc-card" data-svc="tavolo" aria-pressed="false"><span aria-hidden="true">🍽️</span>Prenota un Tavolo</button>
+              <button type="button" class="svc-card" data-svc="asporto" aria-pressed="false"><span aria-hidden="true">🥡</span>Ordine da Asporto</button>
+            </div>
+            <div class="opt" id="optTavolo" hidden>
+              <label class="f" for="persone">Numero di persone
+                <select id="persone">
+                  <option value="2">2 persone</option><option value="3">3 persone</option><option value="4">4 persone</option>
+                  <option value="5">5 persone</option><option value="6">6 persone</option><option value="8+">8+ persone</option>
+                </select>
+              </label>
+            </div>
+            <div class="opt" id="optAsporto" hidden>
+              <label class="f" for="ritiro">Fascia di ritiro
+                <select id="ritiro">
+                  <option value="Cena">Cena (dalle 19:30)</option>
+                  <option value="Pranzo">Pranzo (solo domenica)</option>
+                </select>
+              </label>
+            </div>
+            <p class="msg" id="msg1" role="alert"></p>
+            <div class="nav-btns"><span></span><button type="button" class="btn btn-primary" data-next="1">Avanti →</button></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="pane" id="pane2">
+            <h3>Scegli data e fascia oraria</h3>
+            <label class="f" for="data">Data
+              <input type="date" id="data">
+            </label>
+            <p class="msg" id="msgData" role="alert"></p>
+            <p class="slots-title" id="stCena">Cena</p>
+            <div class="slots" id="slotsCena" role="group" aria-labelledby="stCena"></div>
+            <p class="slots-title" id="stPranzo" hidden>Pranzo (solo domenica)</p>
+            <div class="slots" id="slotsPranzo" role="group" aria-labelledby="stPranzo" hidden></div>
+            <p class="msg" id="msg2" role="alert"></p>
+            <div class="nav-btns"><button type="button" class="btn" data-prev="2">← Indietro</button><button type="button" class="btn btn-primary" data-next="2">Avanti →</button></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="pane" id="pane3">
+            <h3>I tuoi dati &amp; invio</h3>
+            <label class="f" for="nome">Nome
+              <input type="text" id="nome" autocomplete="name">
+            </label>
+            <label class="f" for="tel">Numero di telefono
+              <input type="tel" id="tel" autocomplete="tel" inputmode="tel">
+            </label>
+            <label class="f" for="note">Note
+              <textarea id="note" placeholder="Es. tavolo all'aperto, seggiolone, celiachia / senza glutine…"></textarea>
+            </label>
+            <label class="chk"><input type="checkbox" id="priv"> <span>Ho letto l'<a href="#privacy">informativa privacy</a> e acconsento al trattamento dei dati inseriti per la gestione della richiesta.</span></label>
+            <p class="msg" id="msg3" role="alert"></p>
+            <div class="actions">
+              <button type="button" class="btn btn-primary" id="btnWa">📲 Prepara Prenotazione WhatsApp</button>
+              <a class="btn" href="tel:+390721896238">📞 Chiama Subito per Confermare (0721 896238)</a>
+            </div>
+            <div class="nav-btns"><button type="button" class="btn" data-prev="3">← Indietro</button><span></span></div>
+          </div>
+
+          <div class="recap" id="recap" aria-live="polite">
+            <h4>Riepilogo della tua richiesta</h4>
+            <dl id="recapList"></dl>
+            <div class="actions">
+              <a class="btn btn-primary" id="waLink" href="#" target="_blank" rel="noopener noreferrer">💬 Invia su WhatsApp</a>
+              <button type="button" class="btn" id="btnCopy">📋 Copia Riepilogo</button>
+            </div>
+            <p class="hint" id="waHint"></p>
+          </div>
+          <p class="hint">Nessun dato viene inviato o salvato da questo sito: il riepilogo si genera sul tuo dispositivo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOVE SIAMO -->
+    <section id="contatti">
+      <div class="wrap">
+        <p class="eyebrow">Vieni a trovarci</p>
+        <h2 class="section-title">Dove Siamo, Orari &amp; Recensioni</h2>
+        <div class="contact-grid">
+          <div>
+            <div class="box">
+              <h3>Recensioni</h3>
+              <p><span class="big-rating">4.4/5</span> <span class="stars" aria-hidden="true">★★★★★</span></p>
+              <p>400+ recensioni su Google</p>
+              <p><a class="btn btn-primary" href="https://google.com" target="_blank" rel="noopener noreferrer">⭐ Leggi o Lascia una Recensione su Google</a></p>
+            </div>
+            <div class="box">
+              <h3>Contatti</h3>
+              <address style="font-style:normal">
+                <p>📍 <strong>Via Pesaro, 1 – 61036 Tavernelle, Colli al Metauro (PU)</strong></p>
+                <p>📞 <a href="tel:+390721896238">0721 896238</a></p>
+              </address>
+              <div class="socials">
+                <a class="btn" href="https://instagram.com/piccolo_west" target="_blank" rel="noopener noreferrer">Instagram @piccolo_west</a>
+                <a class="btn" href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook Piccolo West Tavernelle</a>
+              </div>
+            </div>
+            <div class="box">
+              <h3>Orari</h3>
+              <table>
+                <caption style="text-align:left;caption-side:bottom;padding-top:.5rem;color:var(--muted);font-size:.85rem">Gli orari possono variare nei giorni festivi: ti consigliamo di chiamare.</caption>
+                <tbody>
+                  <tr><th scope="row">Lunedì</th><td>19:00 – 00:00</td></tr>
+                  <tr class="closed"><th scope="row">Martedì</th><td>Chiuso</td></tr>
+                  <tr><th scope="row">Mercoledì – Giovedì</th><td>19:00 – 00:00</td></tr>
+                  <tr><th scope="row">Venerdì – Sabato</th><td>19:00 – 00:30</td></tr>
+                  <tr><th scope="row">Domenica</th><td>Pranzo e cena</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <div class="map" id="mapBox">
+              <div class="ph">
+                <span aria-hidden="true" style="font-size:2.4rem">🗺️</span>
+                <button class="btn btn-primary" id="mapBtn" type="button">Carica la mappa di Google</button>
+                <small>La mappa si carica solo al tuo clic: Google potrebbe impostare cookie propri. Coordinate: 43.737576, 12.89759.</small>
+              </div>
+            </div>
+            <p style="margin-top:1rem">
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=43.737576,12.89759" target="_blank" rel="noopener noreferrer">🧭 Indicazioni stradali</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h3>Piccolo West – Dal 1976</h3>
+      <p>Via Pesaro, 1 – 61036 Tavernelle, Colli al Metauro (PU) · Tel. <a href="tel:+390721896238">0721 896238</a> · P.IVA <strong>[da inserire alla conferma]</strong></p>
+
+      <details id="privacy">
+        <summary>Privacy Policy (GDPR)</summary>
+        <p><strong>Titolare del trattamento:</strong> Piccolo West, Via Pesaro 1, 61036 Tavernelle, Colli al Metauro (PU) – P.IVA [da inserire]. Contatto: 0721 896238.</p>
+        <ul>
+          <li><strong>Dati raccolti dal sito:</strong> nessuno. Il sito non usa cookie, strumenti di analisi o profilazione e non invia dati a server.</li>
+          <li><strong>Modulo di prenotazione:</strong> i dati inseriti restano sul tuo dispositivo e servono solo a comporre un riepilogo che puoi copiare o inviare tu stesso. I dati che comunichi al locale per telefono o WhatsApp sono trattati per eseguire la richiesta (art. 6.1.b GDPR) e per il tempo strettamente necessario.</li>
+          <li><strong>Mappa Google:</strong> viene caricata solo dopo il tuo clic; in quel caso Google LLC può trattare dati (ad es. indirizzo IP) e impostare cookie secondo la propria informativa: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
+          <li><strong>Link esterni</strong> (Google, Instagram, Facebook, WhatsApp): servizi di terzi con proprie informative.</li>
+          <li><strong>I tuoi diritti:</strong> accesso, rettifica, cancellazione, limitazione, opposizione e portabilità (artt. 15-22 GDPR), oltre al reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">garanteprivacy.it</a>).</li>
+        </ul>
+      </details>
+
+      <p>© <span id="year">2026</span> Piccolo West. Tutti i diritti riservati. Sito dimostrativo (prototipo).</p>
+    </div>
+  </footer>
+
+  <a class="fcall" href="tel:+390721896238">📞 Chiama per prenotare · 0721 896238</a>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ===== Config: numero WhatsApp del locale (formato internazionale senza +), da attivare alla consegna ===== */
+    var WHATSAPP_NUMBER = ''; // es. '39333XXXXXXX'
+
+    /* ===== Dati menù ===== */
+    var GF = 'Senza Glutine', VEG = 'Vegano';
+    var MENU = [
+      { id: 'antipasti', label: 'Antipasti', note: 'Tradizione marchigiana, con produzione propria.', items: [
+        ['Degustazione di Antipasti', 'Min. 2 persone · 5 antipasti freddi + 4 caldi della tradizione marchigiana', '15,00 €'],
+        ['Tagliere di Salumi Nostrani e Formaggi', 'Con confetture fatte in casa di albicocche, fichi, sapa, mostarda e caciotta di Urbino', '13,00 €'],
+        ['Carpaccio di Manzo', 'Rucola, olio extravergine, scaglie di grana e tartufo nero', '11,00 €', [GF]],
+        ['Tartare / Battuta di Manzo (180 g)', 'Rucola, scaglie di grana e sapa di vino cotto', '8,00 €', [GF]],
+        ['Antipasto Caldo di Carne', '', '10,00 €'],
+        ['Polenta con salsa di Tartufo ed erbe', '', '7,00 €'],
+        ['Crostini Misti (7 pezzi)', '', '7,00 €'],
+        ["Olive all'Ascolana / Olive Tartufate", 'Di nostra produzione', '6,00 €'],
+        ['Cremini', 'Di nostra produzione', '5,00 €']
+      ]},
+      { id: 'primi', label: 'Primi di Carne', note: 'Pasta fatta in casa.', items: [
+        ['Passatelli Fonduta e Tartufo Nero', '', '12,00 €'],
+        ["Gnocchi all'Anatra", '', '12,00 €'],
+        ['Fagottini di Riso “Venere”', 'Ripieni di anatra e carne su crema di patate e porri con chips di zucca', '12,00 €'],
+        ['Triangoli Ripieni di Chianina', 'Con zucca e porcini', '12,00 €'],
+        ['Spaghettoni alla Carbonara', 'Ai 5 pepi e Parmigiano 30 mesi', '10,00 €'],
+        ['Mezze Maniche di Farina di Quinoa, Riso e Teff', 'Con zucchine e pancetta croccante', '11,00 €', [GF]],
+        ['Cannelloni di Farina di Ceci e Riso', 'Ricotta, spinaci, funghi di bosco e briciole di prosciutto', '11,00 €', [GF]],
+        ['Ravioli Vegetariani', 'Con zucchine e melanzane', '10,00 €']
+      ]},
+      { id: 'secondi', label: 'Secondi & Brace', note: 'Marchigiana IGP e Chianina, cotte alla brace.', items: [
+        ['Tagliata di Chianina', 'Con rucola, pomodorini e grana', '20,00 €'],
+        ['Tagliata di Chianina al Lardo di Colonnata', 'Con rosmarino', '20,00 €'],
+        ['Tagliata di Chianina', 'Con radicchio e gorgonzola', '20,00 €'],
+        ['Tagliata di Chianina', 'Con cipolla caramellata e aceto balsamico', '20,00 €'],
+        ['Filetto di Manzo alla Griglia', '', '21,00 €'],
+        ['Filetto di Manzo alla “Giulio Cesare”', '', '22,00 €'],
+        ['Grigliata Mista di Carne', 'Filetto, agnello, costine, salsiccia e arrosticini', '18,00 €'],
+        ['Agnello alla Brace', 'Cottura alla brace, sapore autentico', '18,00 €'],
+        ['Hamburger di Chianina', 'Con patate al forno, verdura cotta e salsa', '16,00 €'],
+        ['Mini Hamburger di Chianina', 'Cipolla caramellata, salsa crispy, salsa verde e patate fritte', '15,00 €'],
+        ['Spiedini di Pollo', 'Con piadina nostrana', '12,00 €'],
+        ['Costine di Maiale', '', '10,00 €'],
+        ['Salsicce Nostrane', '', '8,00 €']
+      ]},
+      { id: 'pizze', label: 'Pizze', note: 'Pizze gourmet e pizzeria classica, impasti ad alta digeribilità.', items: [
+        ['Gourmet 001', 'Mozzarella Fior di Latte di Agerola, burrata di Andria, prosciutto crudo, rucola, olio extravergine', '13,00 €'],
+        ['Gourmet 002', 'Base di crema di zucca, mozzarella di bufala, speck croccante, noci e rosmarino', '12,00 €'],
+        ['Gourmet 005', 'Fior di Latte e stracciatella, carpaccio di manzo, rucola, scaglie di grana e tartufo nero', '12,00 €'],
+        ['Gourmet 008', 'Lardo speziato, datterino giallo, burrata, prosciutto crudo e scaglie di grana', '12,00 €'],
+        ['Gourmet 010', 'Finocchiona, stracciatella, patate al forno, cipolla caramellata', '12,00 €'],
+        ['Pizza Rossini', 'Pomodoro, mozzarella, uova sode, maionese', '7,50 €'],
+        ['Pizza Gigante Margherita', '', '11,50 €'],
+        ['Pizza Gigante Rossini', '', '13,50 €'],
+        ['Margherita', '', '5,00 €'],
+        ['Prosciutto e Funghi', '', '7,50 €'],
+        ['Capricciosa', '', '8,50 €'],
+        ['4 Formaggi', '', '8,00 €'],
+        ['Boscaiola', '', '8,00 €'],
+        ['Vegetariana', '', '8,00 €'],
+        ['Impasto Senza Glutine', 'Supplemento sulla pizza scelta', '+2,00 €', [GF]]
+      ]},
+      { id: 'extra', label: 'Contorni, Dolci & Birre', note: 'Dolci fatti in casa e birre artigianali.', groups: [
+        ['Contorni', [
+          ['Patate arrosto / fritte', '', '4,00 €'],
+          ['Verdura cotta / Insalata mista', '', '4,00 €'],
+          ['Verdura alla griglia', '', '5,00 €'],
+          ['Fiori di zucca pastellati', 'Con mozzarella e acciughe', '6,00 €'],
+          ['Fagottini di melanzane ripieni', '', '6,00 €']
+        ]],
+        ['Dolci Artigianali', [
+          ['Tiramisù', '', '7,00 €'],
+          ['Quasi un Raffaello', '', '8,00 €'],
+          ['Mousse al Mascarpone', 'Frutti di bosco o Nutella', '7,00 €', [GF]],
+          ['Lingotto di Cioccolato Fondente', '', '7,50 €', [GF]],
+          ['Pavé di Gelato al Caramello Salato', '', '7,00 €'],
+          ['Mousse agli Agrumi', '', '7,00 €', [GF]],
+          ['“Bolle” di Gelato', '', '7,00 €', [GF, VEG]]
+        ]],
+        ['Cantina & Birre', [
+          ['Birre Artigianali IPA / APA / Blanche', '', '5,00 €'],
+          ['Birra senza glutine 33 cl', '', '4,50 €', [GF]],
+          ['Rosso Piceno – Az. Agricola Libenzi', 'Calice 3,50 € · Bottiglia 13,00 €', '3,50 / 13,00 €'],
+          ['Bianchello del Metauro e Verdicchio', 'Chiedi la carta dei vini', '']
+        ]]
+      ]}
+    ];
+
+    var state = { tab: 'antipasti', filter: false };
+    var tabsEl = document.getElementById('tabs'), itemsEl = document.getElementById('items');
+    var noteEl = document.getElementById('tabNote'), filterBtn = document.getElementById('filterBtn');
+
+    function el(tag, cls, text) {
+      var e = document.createElement(tag);
+      if (cls) e.className = cls;
+      if (text) e.textContent = text;
+      return e;
+    }
+    function itemNode(it) {
+      var box = el('article', 'item'), left = el('div');
+      left.appendChild(el('h3', '', it[0]));
+      if (it[1]) left.appendChild(el('p', '', it[1]));
+      (it[3] || []).forEach(function (t) { left.appendChild(el('span', 'tag', t)); });
+      box.appendChild(left);
+      if (it[2]) box.appendChild(el('span', 'price', it[2]));
+      return box;
+    }
+    function flat(c) { return c.items ? c.items : [].concat.apply([], c.groups.map(function (g) { return g[1]; })); }
+    function keep(it) { return it[3] && it[3].length; }
+
+    function render() {
+      var cat = MENU.filter(function (c) { return c.id === state.tab; })[0], count = 0;
+      noteEl.textContent = state.filter ? 'Filtro attivo: solo proposte senza glutine o vegane in tutte le categorie.' : cat.note;
+      itemsEl.setAttribute('aria-labelledby', 'tab-' + state.tab);
+      itemsEl.innerHTML = '';
+      function head(t) { itemsEl.appendChild(el('h3', 'group-h', t)); }
+      if (state.filter) {
+        MENU.forEach(function (c) {
+          var shown = flat(c).filter(keep);
+          if (!shown.length) return;
+          head(c.label);
+          shown.forEach(function (it) { itemsEl.appendChild(itemNode(it)); count++; });
+        });
+      } else if (cat.items) {
+        cat.items.forEach(function (it) { itemsEl.appendChild(itemNode(it)); count++; });
+      } else {
+        cat.groups.forEach(function (g) { head(g[0]); g[1].forEach(function (it) { itemsEl.appendChild(itemNode(it)); count++; }); });
+      }
+      if (!count) itemsEl.appendChild(el('p', 'empty', 'Nessuna proposta con questo filtro.'));
+    }
+    function syncFilter() { filterBtn.setAttribute('aria-pressed', String(state.filter)); }
+    function selectTab(id, focus) {
+      state.tab = id; state.filter = false; syncFilter(); renderTabs(); render();
+      if (focus) document.getElementById('tab-' + id).focus();
+    }
+    function renderTabs() {
+      tabsEl.innerHTML = '';
+      MENU.forEach(function (c, i) {
+        var b = el('button', 'tab', c.label);
+        b.type = 'button'; b.id = 'tab-' + c.id;
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-selected', String(c.id === state.tab));
+        b.tabIndex = c.id === state.tab ? 0 : -1;
+        b.addEventListener('click', function () { selectTab(c.id); });
+        b.addEventListener('keydown', function (e) {
+          var n = null;
+          if (e.key === 'ArrowRight') n = MENU[(i + 1) % MENU.length];
+          if (e.key === 'ArrowLeft') n = MENU[(i - 1 + MENU.length) % MENU.length];
+          if (n) { e.preventDefault(); selectTab(n.id, true); }
+        });
+        tabsEl.appendChild(b);
+      });
+    }
+    filterBtn.addEventListener('click', function () { state.filter = !state.filter; syncFilter(); render(); });
+    renderTabs(); render();
+
+    /* ===== Navigazione mobile ===== */
+    var nav = document.getElementById('nav'), tg = document.getElementById('navToggle');
+    function closeNav() { nav.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); tg.textContent = '☰'; }
+    tg.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      tg.setAttribute('aria-expanded', String(open));
+      tg.textContent = open ? '✕' : '☰';
+    });
+    nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') closeNav(); });
+
+    /* ===== Foto con fallback ===== */
+    Array.prototype.forEach.call(document.querySelectorAll('.shot img'), function (img) {
+      function fail() { img.closest('.shot').classList.add('nofoto'); }
+      img.addEventListener('error', fail);
+      if (img.complete && img.naturalWidth === 0) fail();
+    });
+
+    /* ===== Widget prenotazione a 3 step ===== */
+    var B = { svc: '', persone: '2', ritiro: 'Cena', data: '', ora: '' };
+    var panes = [1, 2, 3].map(function (n) { return document.getElementById('pane' + n); });
+    var stepLis = document.querySelectorAll('#steps li');
+    var recap = document.getElementById('recap');
+    var $ = function (id) { return document.getElementById(id); };
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    var t = new Date();
+    $('data').min = t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate());
+
+    function go(n) {
+      panes.forEach(function (p, i) { p.classList.toggle('on', i === n - 1); });
+      Array.prototype.forEach.call(stepLis, function (li, i) {
+        li.classList.toggle('on', i === n - 1);
+        li.classList.toggle('done', i < n - 1);
+      });
+      recap.classList.remove('show');
+      $('widget').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* Step 1 */
+    var cards = document.querySelectorAll('.svc-card');
+    Array.prototype.forEach.call(cards, function (c) {
+      c.addEventListener('click', function () {
+        B.svc = c.getAttribute('data-svc');
+        Array.prototype.forEach.call(cards, function (x) { x.setAttribute('aria-pressed', String(x === c)); });
+        $('optTavolo').hidden = B.svc !== 'tavolo';
+        $('optAsporto').hidden = B.svc !== 'asporto';
+        $('msg1').textContent = '';
+      });
+    });
+    $('persone').addEventListener('change', function () { B.persone = this.value; });
+    $('ritiro').addEventListener('change', function () { B.ritiro = this.value; renderSlots(); });
+
+    /* Step 2 */
+    var SLOTS_CENA = ['19:30', '20:00', '20:30', '21:00', '21:30', '22:00'];
+    var SLOTS_PRANZO = ['12:30', '13:00', '13:30', '14:00'];
+    function dow() { return B.data ? new Date(B.data + 'T12:00:00').getDay() : null; }
+
+    function slotBtns(box, list) {
+      box.innerHTML = '';
+      list.forEach(function (s) {
+        var b = el('button', 'slot', s);
+        b.type = 'button';
+        b.setAttribute('aria-pressed', String(B.ora === s));
+        b.addEventListener('click', function () {
+          B.ora = s; $('msg2').textContent = '';
+          Array.prototype.forEach.call(document.querySelectorAll('.slot'), function (x) { x.setAttribute('aria-pressed', String(x.textContent === s)); });
+        });
+        box.appendChild(b);
+      });
+    }
+    function renderSlots() {
+      var d = dow(), sun = d === 0, closed = d === 2;
+      var showPranzo = sun && (B.svc !== 'asporto' || B.ritiro === 'Pranzo');
+      var showCena = !closed && (B.svc !== 'asporto' || B.ritiro === 'Cena' || sun);
+      $('stCena').hidden = $('slotsCena').hidden = !showCena;
+      $('stPranzo').hidden = $('slotsPranzo').hidden = !showPranzo;
+      slotBtns($('slotsCena'), closed ? [] : SLOTS_CENA);
+      slotBtns($('slotsPranzo'), sun ? SLOTS_PRANZO : []);
+      if (B.ora && !(showCena && SLOTS_CENA.indexOf(B.ora) > -1) && !(showPranzo && SLOTS_PRANZO.indexOf(B.ora) > -1)) B.ora = '';
+      var m = $('msgData');
+      if (closed) { m.textContent = 'Il martedì il locale è chiuso: scegli un altro giorno.'; m.className = 'msg'; }
+      else if (B.svc === 'asporto' && B.ritiro === 'Pranzo' && B.data && !sun) { m.textContent = 'Il pranzo è disponibile solo la domenica: scegli una domenica o cambia fascia di ritiro.'; m.className = 'msg warn'; }
+      else if (B.data && !sun) { m.textContent = 'Il pranzo è disponibile solo la domenica.'; m.className = 'msg warn'; }
+      else m.textContent = '';
+    }
+    $('data').addEventListener('change', function () { B.data = this.value; B.ora = ''; renderSlots(); });
+
+    /* Navigazione step */
+    document.querySelectorAll('[data-next]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var n = Number(b.getAttribute('data-next'));
+        if (n === 1) {
+          if (!B.svc) { $('msg1').textContent = 'Scegli prima il servizio.'; return; }
+          B.persone = $('persone').value; B.ritiro = $('ritiro').value;
+          renderSlots(); go(2);
+        } else if (n === 2) {
+          if (!B.data) { $('msg2').textContent = 'Seleziona una data.'; return; }
+          if (dow() === 2) { $('msg2').textContent = 'Il martedì il locale è chiuso.'; return; }
+          if (!B.ora) { $('msg2').textContent = 'Scegli una fascia oraria.'; return; }
+          go(3);
+        }
+      });
+    });
+    document.querySelectorAll('[data-prev]').forEach(function (b) {
+      b.addEventListener('click', function () { go(Number(b.getAttribute('data-prev')) - 1); });
+    });
+
+    /* Step 3 */
+    function fmtDate(v) { var p = v.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+    var lastText = '';
+    $('btnWa').addEventListener('click', function () {
+      var nome = $('nome').value.trim(), tel = $('tel').value.trim(), note = $('note').value.trim();
+      var m = $('msg3');
+      if (!nome) { m.textContent = 'Inserisci il tuo nome.'; return; }
+      if (!/^[+0-9 ().-]{6,}$/.test(tel)) { m.textContent = 'Inserisci un numero di telefono valido.'; return; }
+      if (!$('priv').checked) { m.textContent = 'Per procedere devi accettare l\'informativa privacy.'; return; }
+      m.textContent = '';
+
+      var rows = [['Servizio', B.svc === 'tavolo' ? 'Prenotazione tavolo' : 'Ordine da asporto']];
+      if (B.svc === 'tavolo') rows.push(['Persone', B.persone]);
+      else rows.push(['Fascia di ritiro', B.ritiro]);
+      rows.push(['Data', fmtDate(B.data)], ['Orario', B.ora], ['Nome', nome], ['Telefono', tel], ['Note', note || 'nessuna']);
+
+      lastText = 'Buongiorno, vorrei richiedere:\n' + rows.map(function (r) { return '• ' + r[0] + ': ' + r[1]; }).join('\n') + '\nAttendo conferma. Grazie!';
+      var dl = $('recapList'); dl.innerHTML = '';
+      rows.forEach(function (r) { dl.appendChild(el('dt', '', r[0])); dl.appendChild(el('dd', '', r[1])); });
+
+      $('waLink').href = (WHATSAPP_NUMBER ? 'https://wa.me/' + WHATSAPP_NUMBER : 'https://wa.me/') + '?text=' + encodeURIComponent(lastText);
+      $('waHint').textContent = WHATSAPP_NUMBER
+        ? 'Si aprirà WhatsApp con il messaggio già pronto. La richiesta è valida dopo conferma del locale.'
+        : 'Il numero WhatsApp del locale verrà attivato alla consegna: per ora copia il riepilogo oppure chiama lo 0721 896238 per confermare.';
+      recap.classList.add('show');
+      recap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    function fallbackCopy(txt, cb) {
+      var ta = document.createElement('textarea'); ta.value = txt; ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); cb(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    $('btnCopy').addEventListener('click', function () {
+      var btn = this;
+      function ok() { var o = btn.textContent; btn.textContent = '✅ Copiato!'; setTimeout(function () { btn.textContent = o; }, 1800); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(lastText).then(ok, function () { fallbackCopy(lastText, ok); });
+      else fallbackCopy(lastText, ok);
+    });
+
+    /* ===== Mappa on-click (GDPR) ===== */
+    $('mapBtn').addEventListener('click', function () {
+      var box = $('mapBox'), f = document.createElement('iframe');
+      f.src = 'https://maps.google.com/maps?q=43.737576,12.89759&z=16&output=embed';
+      f.title = 'Mappa di Google: Piccolo West, Via Pesaro 1, Tavernelle';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      box.innerHTML = ''; box.style.padding = '0'; box.appendChild(f);
+    });
+
+    $('year').textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
